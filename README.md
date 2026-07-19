@@ -1,5 +1,148 @@
 
+# ☁️ Cloud-Agnostic Infrastructure Platform
+
+<p align="center">
+
+<b>One Platform. Any Cloud. Same Experience.</b>
+
+<br>
+
+A cloud-agnostic Infrastructure as Code platform for building secure, scalable, and production-ready cloud environments across AWS, Azure, and GCP.
+
+</p>
+
 ---
+
+## 🚀 Project Status
+
+![Status](https://img.shields.io/badge/status-active%20development-blue)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-844FBA)
+![AWS](https://img.shields.io/badge/Cloud-AWS-orange)
+![Platform Engineering](https://img.shields.io/badge/focus-Platform%20Engineering-green)
+
+**Current Phase:** AWS Foundation & Terraform Platform Bootstrap
+
+Progress:
+---
+
+---
+
+# 📖 Overview
+
+The **Cloud-Agnostic Infrastructure Platform** is an Infrastructure as Code (IaC) project designed to provide a standardized approach for provisioning secure and scalable infrastructure across multiple cloud providers.
+
+The platform follows a **Platform Engineering approach**, where infrastructure consumers define their requirements through a standardized interface while cloud-specific implementations remain abstracted behind provider adapters.
+
+The goal is to enable teams to deploy infrastructure consistently across:
+
+- ☁️ Amazon Web Services (AWS)
+- ☁️ Microsoft Azure
+- ☁️ Google Cloud Platform (GCP)
+
+while maintaining:
+
+- Security
+- Scalability
+- Automation
+- Observability
+- Operational consistency
+
+---
+
+# 🎯 Vision
+
+Build an enterprise-grade internal infrastructure platform that allows engineering teams to provision production-ready cloud environments using reusable modules, automation, and cloud-agnostic design principles.
+
+---
+
+# 🏗 Architecture
+
+The platform uses a layered architecture:
+             Platform Users
+                   |
+                   |
+                   ▼
+
+      Cloud-Agnostic Platform Contract
+
+                   |
+                   |
+
+         Terraform Orchestration Layer
+
+                   |
+    -----------------------------------
+    |                 |               |
+    ▼                 ▼               ▼
+
+ AWS Adapter     Azure Adapter     GCP Adapter
+
+    |                 |               |
+
+    ▼                 ▼               ▼
+
+   AWS              Azure             GCP
+
+The platform separates:
+
+**What infrastructure is required**
+
+from
+
+**How it is implemented on each cloud provider**
+
+---
+
+# ☁️ Supported Cloud Providers
+
+| Provider | Status |
+|---|---|
+| AWS | 🚧 Active Development |
+| Microsoft Azure | 📅 Planned |
+| Google Cloud Platform | 📅 Planned |
+
+---
+
+# 🛠 Technology Stack
+
+## Infrastructure as Code
+
+- Terraform
+- Terraform Modules
+- Terraform Remote State
+
+## Cloud Platforms
+
+- AWS
+- Azure (planned)
+- GCP (planned)
+
+## CI/CD
+
+- GitHub Actions
+
+## Containers
+
+- Docker
+- Kubernetes
+
+## Monitoring & Observability
+
+- AWS CloudWatch
+- Prometheus
+- Grafana
+
+## Security
+
+- IAM
+- KMS
+- Security Groups
+- Encryption
+- Secrets Management
+
+---
+
+
 
 # ✅ Current Implementation Progress
 
