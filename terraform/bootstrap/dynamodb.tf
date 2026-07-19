@@ -1,6 +1,6 @@
 resource "aws_dynamodb_table" "terraform_lock" {
 
-  name         = "caip-terraform-locks"
+  name         = var.terraform_lock_table_name
   billing_mode = "PAY_PER_REQUEST"
 
   hash_key = "LockID"
