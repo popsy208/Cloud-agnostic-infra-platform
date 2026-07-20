@@ -1,105 +1,257 @@
-
-# ☁️ Cloud-Agnostic Infrastructure Platform
+# ☁️ Cloud-Agnostic Infrastructure Platform (CAIP)
 
 <p align="center">
 
-<b>One Platform. Any Cloud. Same Experience.</b>
+## One Platform. Any Cloud. Same Experience.
 
-<br>
-
-A cloud-agnostic Infrastructure as Code platform for building secure, scalable, and production-ready cloud environments across AWS, Azure, and GCP.
+A cloud-agnostic Infrastructure as Code platform for designing, provisioning, and managing secure cloud infrastructure using reusable Terraform modules and platform engineering principles.
 
 </p>
 
 ---
 
-## 🚀 Project Status
+# 🚀 Project Status
 
 ![Status](https://img.shields.io/badge/status-active%20development-blue)
 ![Terraform](https://img.shields.io/badge/IaC-Terraform-844FBA)
 ![AWS](https://img.shields.io/badge/Cloud-AWS-orange)
 ![Platform Engineering](https://img.shields.io/badge/focus-Platform%20Engineering-green)
 
-**Current Phase:** AWS Foundation & Terraform Platform Bootstrap
+## Current Phase
 
-Progress:
----
+🚧 **AWS Infrastructure Foundation Completed**
+
+CAIP currently provides a working AWS infrastructure foundation built with Terraform modules, remote state management, networking architecture, security controls, and compute provisioning.
 
 ---
 
 # 📖 Overview
 
-The **Cloud-Agnostic Infrastructure Platform** is an Infrastructure as Code (IaC) project designed to provide a standardized approach for provisioning secure and scalable infrastructure across multiple cloud providers.
+The **Cloud-Agnostic Infrastructure Platform (CAIP)** is an Infrastructure as Code (IaC) project designed to create a standardized approach for provisioning secure and scalable cloud environments.
 
-The platform follows a **Platform Engineering approach**, where infrastructure consumers define their requirements through a standardized interface while cloud-specific implementations remain abstracted behind provider adapters.
+The platform follows **Platform Engineering principles** by separating:
+Infrastructure Requirements
+|
+|
+↓
+Cloud-Specific Implementation
 
-The goal is to enable teams to deploy infrastructure consistently across:
+The goal is to provide a consistent infrastructure experience across:
 
 - ☁️ Amazon Web Services (AWS)
 - ☁️ Microsoft Azure
 - ☁️ Google Cloud Platform (GCP)
 
-while maintaining:
-
-- Security
-- Scalability
-- Automation
-- Observability
-- Operational consistency
-
 ---
 
 # 🎯 Vision
 
-Build an enterprise-grade internal infrastructure platform that allows engineering teams to provision production-ready cloud environments using reusable modules, automation, and cloud-agnostic design principles.
+Build an enterprise-style internal cloud platform that enables engineering teams to provision production-ready infrastructure through:
+
+- Reusable infrastructure modules
+- Automation
+- Secure defaults
+- Standardized workflows
+- Multi-cloud architecture patterns
 
 ---
 
 # 🏗 Architecture
 
-The platform uses a layered architecture:
-             Platform Users
-                   |
-                   |
-                   ▼
+CAIP follows a layered architecture:
+                Platform Users
+                      |
+                      |
+                      ↓
 
-      Cloud-Agnostic Platform Contract
+         Cloud-Agnostic Platform Contract
 
-                   |
-                   |
+                      |
+                      |
 
-         Terraform Orchestration Layer
+          Terraform Orchestration Layer
 
-                   |
-    -----------------------------------
-    |                 |               |
-    ▼                 ▼               ▼
+                      |
+    -----------------------------------------
+    |                  |                    |
+    ↓                  ↓                    ↓
 
- AWS Adapter     Azure Adapter     GCP Adapter
+AWS Adapter       Azure Adapter        GCP Adapter
 
-    |                 |               |
+    |                  |                    |
 
-    ▼                 ▼               ▼
+    ↓                  ↓                    ↓
 
-   AWS              Azure             GCP
-
+   AWS              Azure                 GCP
+   
 The platform separates:
 
 **What infrastructure is required**
 
 from
 
-**How it is implemented on each cloud provider**
+**How each cloud provider implements it**
 
 ---
 
-# ☁️ Supported Cloud Providers
+# ☁️ Cloud Provider Support
 
-| Provider | Status |
+| Cloud Provider | Status |
 |---|---|
 | AWS | 🚧 Active Development |
-| Microsoft Azure | 📅 Planned |
-| Google Cloud Platform | 📅 Planned |
+| Azure | 📅 Planned |
+| GCP | 📅 Planned |
+
+---
+
+# 🏗 Current AWS Architecture
+
+The current AWS implementation includes:
+AWS Cloud
+
+|
+├── VPC
+|
+├── Public Subnets
+| ├── eu-west-1a
+| └── eu-west-1b
+|
+├── Private Subnets
+| ├── eu-west-1a
+| └── eu-west-1b
+|
+├── Internet Gateway
+|
+├── Route Tables
+|
+├── Security Group
+|
+└── EC2 Compute Instance
+
+---
+
+# ✅ Completed Features
+
+## Terraform Foundation
+
+Implemented:
+
+- [x] Terraform project initialization
+- [x] Terraform version management
+- [x] AWS provider configuration
+- [x] Terraform module architecture
+- [x] Environment-based deployment structure
+
+
+---
+
+# 🔐 Remote Terraform Backend
+
+CAIP uses AWS remote state management.
+
+Implemented:
+
+- [x] S3 Terraform state storage
+- [x] DynamoDB state locking
+- [x] State encryption
+- [x] S3 versioning
+- [x] Public access protection
+
+
+Architecture:
+Terraform
+|
+|
+↓
+
+AWS S3
+Terraform State
+
++
+DynamoDB
+State Locking
+
+Benefits:
+
+✅ Centralized state management  
+✅ State recovery capability  
+✅ Safe team collaboration  
+✅ Prevention of state corruption  
+
+---
+
+# 🧩 Terraform Module Architecture
+
+CAIP uses reusable Terraform modules.
+
+Current modules:
+terraform/
+
+└── modules/├── vpc/
+
+├── security/
+
+└── compute/
+
+---
+
+# 🌐 VPC Module
+
+Implemented:
+
+- AWS VPC creation
+- DNS support
+- DNS hostname support
+- Internet Gateway
+- Public subnet creation
+- Private subnet creation
+- Route tables
+- Route associations
+
+
+Features:
+
+✅ Multi Availability Zone networking  
+✅ Public/private network separation  
+✅ Reusable infrastructure component  
+
+---
+
+# 🔒 Security Module
+
+Implemented:
+
+- AWS Security Group provisioning
+- Application security configuration
+- VPC security integration
+
+
+Purpose:
+
+Provides controlled network access for deployed workloads.
+
+---
+
+# 🖥 Compute Module
+
+Implemented:
+
+- EC2 instance provisioning
+- Instance networking integration
+- Security group attachment
+- Public IP assignment
+
+
+Current deployment:
+EC2 Instance
+
+|
+|
+├── Public Subnet
+|
+├── Security Group
+|
+└── Terraform Managed
 
 ---
 
@@ -111,246 +263,196 @@ from
 - Terraform Modules
 - Terraform Remote State
 
-## Cloud Platforms
+
+## Cloud
+
+Current:
 
 - AWS
-- Azure (planned)
-- GCP (planned)
 
-## CI/CD
+Future:
 
-- GitHub Actions
+- Azure
+- Google Cloud
 
-## Containers
+
+## Container Platform
+
+Planned:
 
 - Docker
 - Kubernetes
 
-## Monitoring & Observability
+
+## CI/CD
+
+Planned:
+
+- GitHub Actions
+- Terraform automation pipelines
+
+
+## Monitoring
+
+Planned:
 
 - AWS CloudWatch
 - Prometheus
 - Grafana
 
+
 ## Security
 
-- IAM
-- KMS
+Implemented:
+
 - Security Groups
 - Encryption
-- Secrets Management
-
----
-
-## Current Sprint
-
-**Sprint 1 — Platform Foundation**
-
-### Progress
-
-- [x] Repository created
-- [x] Project documentation
-- [x] Terraform project structure
-- [x] Terraform version management
-- [x] AWS provider configuration
-- [x] AWS remote backend infrastructure
-- [x] S3 Terraform state storage
-- [x] DynamoDB Terraform state locking
-- [x] State encryption enabled
-- [x] S3 bucket versioning enabled
-- [x] S3 public access protection enabled
-- [x] Migrated Terraform state from local storage to remote backend
+- Secure state storage
 
 
-### Completed
+Planned:
 
-- Initialized Terraform bootstrap architecture.
-- Created secure AWS remote backend infrastructure.
-- Configured S3 for Terraform state management.
-- Configured DynamoDB for Terraform state locking.
-- Implemented encryption and versioning for Terraform state storage.
-- Migrated Terraform state from local storage to AWS S3.
-
-### Currently Working On
-
-- AWS networking foundation.
-- VPC architecture.
-- Subnet design.
-- Routing strategy.
-- Security group architecture.
-
-### Upcoming
-
-- VPC module
-- Public and private subnet modules
-- NAT Gateway
-- Internet Gateway
-- IAM foundation
-- Compute layer
-- Monitoring and observability
----
-
-# 🔐 Terraform Bootstrap Layer
-
-The bootstrap layer provides the foundation required for reliable Terraform operations.
-
-## Remote State Management
-
-Implemented:
-
-- Terraform remote backend preparation
-- State versioning capability
-- Encryption configuration
-- Public access protection
-
-Benefits:
-
-✅ Centralized infrastructure state  
-✅ State recovery capability  
-✅ Improved security posture  
-
----
-
-## State Locking
-
-Implemented:
-
-- DynamoDB state locking configuration
-
-Purpose:
-
-Prevents multiple Terraform executions from modifying infrastructure state simultaneously.
-
-Benefits:
-
-✅ Prevents state corruption  
-✅ Supports team collaboration  
-✅ Improves infrastructure reliability  
-
----
-
-# 🏃 Current Development Sprint
-
-## Sprint 1 — Platform Foundation
-
-### Current Work
-
-- Deploying Terraform bootstrap resources
-- Configuring AWS remote backend
-- Building reusable Terraform modules
-- Establishing AWS infrastructure foundation
+- IAM automation
+- Secrets management
+- Security policies
 
 ---
 
 # 🗺 Roadmap
 
-## Phase 1 — AWS Foundation 🚧
+## Phase 1 — AWS Foundation ✅
+
+Completed:
 
 - [x] Terraform setup
 - [x] AWS provider configuration
-- [x] Remote backend bootstrap
+- [x] Remote backend
 - [x] State locking
-- [x] Encryption configuration
+- [x] Encryption
+- [x] VPC module
+- [x] Networking layer
+- [x] Security module
+- [x] Compute module
+- [x] EC2 deployment
 
-Next:
 
-- [ ] VPC module
-- [ ] Networking layer
+---
+
+# Phase 2 — Platform Expansion 🚧
+
+Currently working on:
+
+- [ ] Dynamic AMI discovery
+- [ ] EC2 user-data automation
 - [ ] IAM module
-- [ ] Compute module
 - [ ] Storage module
 - [ ] DNS implementation
+- [ ] Improved environment abstraction
+
 
 ---
 
-## Phase 2 — Platform Core
+# Phase 3 — Platform Engineering Layer
 
-- Reusable Terraform modules
-- Platform Contract
-- Environment abstraction
+Planned:
+
+- Platform contract design
+- Self-service infrastructure workflows
 - Infrastructure templates
+- Developer-facing interfaces
+
 
 ---
 
-## Phase 3 — Security Engineering
+# Phase 4 — Security Engineering
+
+Planned:
 
 - Least privilege IAM
 - Secrets management
 - Security policies
 - Compliance automation
 
----
-
-## Phase 4 — Observability
-
-- CloudWatch integration
-- Prometheus monitoring
-- Grafana dashboards
-- Alerting
 
 ---
 
-## Phase 5 — Infrastructure Delivery
+# Phase 5 — Infrastructure Delivery
+
+Planned:
 
 - GitHub Actions CI/CD
-- Terraform validation
-- Automated plans
-- Deployment workflows
-- Approval pipelines
+- Terraform validation pipelines
+- Automated Terraform plans
+- Deployment approvals
+
 
 ---
 
-## Phase 6 — Multi Cloud Expansion
+# Phase 6 — Multi-Cloud Expansion
 
-### Azure Adapter
+Future implementations:
 
-Planned
+## Azure Adapter
 
-### GCP Adapter
+Planned:
 
-Planned
+- Azure networking
+- Azure compute
+- Azure security
+
+
+## GCP Adapter
+
+Planned:
+
+- Google networking
+- Google compute
+- GCP security
 
 ---
 
 # 🎓 Skills Demonstrated
 
-This project demonstrates practical experience with:
+This project demonstrates experience with:
 
 - Infrastructure as Code
-- Terraform
-- AWS Cloud Architecture
-- Platform Engineering
-- Cloud Automation
-- Infrastructure Security
-- CI/CD Automation
-- Multi-cloud Architecture
-- DevOps Best Practices
+- Terraform architecture
+- Terraform modules
+- AWS cloud architecture
+- Remote state management
+- Cloud networking
+- Platform Engineering concepts
+- Infrastructure automation
+- DevOps best practices
+- Cloud security fundamentals
 
 ---
 
 # 💡 Why This Project?
 
-Modern organizations increasingly adopt Platform Engineering to provide developers with self-service infrastructure.
+Modern organizations are adopting Platform Engineering to provide developers with secure self-service infrastructure.
 
-Instead of manually provisioning cloud resources, teams interact with standardized platforms that provide:
+Instead of manually provisioning cloud resources, teams use platforms that provide:
 
 - Consistent deployments
 - Secure defaults
 - Automated workflows
-- Reduced operational complexity
+- Reusable components
+- Operational consistency
 
-This project explores how such a platform can be designed using Terraform and cloud-native technologies.
+
+CAIP explores how these principles can be implemented using Terraform and cloud-native technologies.
 
 ---
 
-# 👨‍💻 Author
+# 👨‍💻 Authort 
 
 ## Ibrahim Popoola
 
-DevOps Engineer | Cloud Engineer | Platform Engineering
+**DevOps Engineer | Cloud Engineer | Platform Engineering**
 
-Building cloud-native infrastructure platforms and automation solutions while developing expertise in DevOps, cloud architecture, and modern infrastructure engineering.
+Building cloud-native infrastructure platforms, automation solutions, and scalable Infrastructure as Code systems.
 
 ---
 
-⭐ If you find this project interesting, consider starring the repository to follow its progress.
+⭐ If you find this project interesting, consider starring the repository and following the development journey.
