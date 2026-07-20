@@ -22,3 +22,21 @@ module "security" {
   vpc_id = module.vpc.vpc_id
 
 }
+
+module "compute" {
+
+  source = "../../modules/compute"
+
+
+  project_name = var.project_name
+
+
+  subnet_id = module.vpc.public_subnet_ids[0]
+
+
+  security_group_id = module.security.application_security_group_id
+
+
+  instance_type = "t3.micro"
+
+}
