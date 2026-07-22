@@ -1,8 +1,10 @@
 resource "aws_instance" "app" {
 
-  ami = "ami-0c1c30571d2dae5c9"
+  ami = data.aws_ami.amazon_linux.id
 
   instance_type = var.instance_type
+
+   key_name = var.key_name
 
   subnet_id = var.subnet_id
 
@@ -13,6 +15,8 @@ resource "aws_instance" "app" {
 
 
   associate_public_ip_address = true
+
+  user_data = file("${path.module}/user_data.sh")
 
 
   tags = {
